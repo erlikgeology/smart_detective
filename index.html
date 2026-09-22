@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08131f" />
+    <meta
+      name="description"
+      content="Smart Detective reveals coordinated wallet behavior that large-transaction alerts can miss."
+    />
+    <title>Smart Detective — Ocean Intelligence</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#ocean" aria-label="Smart Detective home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 38 38" fill="none">
+              <path d="M7 21.5C12.5 10.5 21 8 30.5 10.5C27.5 17 20.5 23 11.5 25.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+              <path d="M11.5 25.5C14.5 29 19.5 30.5 24.5 29.5C20.5 25 19.5 20.5 21 15.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+              <circle cx="26.7" cy="13.5" r="1.6" fill="currentColor" />
+            </svg>
+          </span>
+          <span>
+            <strong>SMART DETECTIVE</strong>
+            <small>OCEAN INTELLIGENCE</small>
+          </span>
+        </a>
+        <div class="topbar-right">
+          <span class="mode-badge"><span class="pulse-dot"></span> LIVE API NOT LOADED</span>
+          <button class="icon-button" id="helpButton" aria-label="About Smart Detective" title="About Smart Detective">?</button>
+          <button class="avatar" aria-label="Investigator profile">SD</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="ocean">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span> FOLLOW THE SMALL FISH</div>
+            <h1>Find the movement<br /><em>beneath</em> the surface.</h1>
+            <p>
+              Smart Detective surfaces coordinated wallet behavior that a large-transaction alert can miss — then shows you exactly why the pattern is worth investigating.
+            </p>
+            <div class="hero-actions">
+              <button class="primary-button" id="exploreButton">
+                <span>Explore money flow</span>
+                <span class="button-arrow">↗</span>
+              </button>
+              <button class="text-button" id="liveDataButton"><span class="live-dot"></span> Check live data</button>
+            </div>
+          </div>
+          <div class="hero-aside">
+            <div class="sonar-orb" aria-hidden="true">
+              <div class="sonar-ring ring-one"></div>
+              <div class="sonar-ring ring-two"></div>
+              <div class="sonar-ring ring-three"></div>
+              <div class="sonar-sweep"></div>
+              <span class="sonar-center"></span>
+              <span class="sonar-label">SONAR<br /><b>READY</b></span>
+            </div>
+            <div class="hero-note"><span>⌁</span><div><strong>One hypothesis at a time</strong><small>Patterns are clues, not ownership claims.</small></div></div>
+          </div>
+        </section>
+
+        <section class="control-strip" aria-label="Investigation filters">
+          <div class="filter-group">
+            <button class="filter-select"><span class="filter-icon">◈</span><span><small>CHAIN</small><b>Ethereum</b></span><span class="chevron">⌄</span></button>
+            <button class="filter-select"><span class="filter-icon token-icon">✦</span><span><small>TOKEN</small><b>AURA <i>/ USDC</i></b></span><span class="chevron">⌄</span></button>
+            <button class="filter-select"><span class="filter-icon">◷</span><span><small>WINDOW</small><b>Last 7 days</b></span><span class="chevron">⌄</span></button>
+          </div>
+          <div class="token-loading-tools" aria-live="polite">
+            <div class="token-loading-copy">
+              <small>TOKEN CATALOG</small>
+              <strong id="tokenLoadStatus">Cached rows only</strong>
+              <span id="tokenLoadHint">Check live data for candidates, or load the full selected chain on demand.</span>
+            </div>
+            <div class="token-loading-actions">
+              <button class="secondary-button" id="fullChainButton" type="button">Load full chain list</button>
+              <button class="secondary-button" id="nextTokenPageButton" type="button" hidden>Load next page</button>
+            </div>
+          </div>
+          <div class="data-freshness"><span class="freshness-dot"></span><span><small>OBSERVED AT</small><b id="observedTime">Sep 20, 2026 · 09:14 UTC</b></span></div>
+        </section>
+
+        <section class="metric-grid" aria-label="Investigation summary">
+          <article class="metric-card accent-cyan">
+            <div class="metric-label"><span class="metric-icon">↗</span> OBSERVED NET DEX BUYING <span class="info-dot" title="Executed DEX buys minus sells in this saved snapshot">i</span></div>
+            <strong>$2.84M</strong><span class="metric-sub positive">+18.6% <small>vs prior window</small></span>
+            <div class="sparkline cyan-spark"><span style="height:25%"></span><span style="height:34%"></span><span style="height:29%"></span><span style="height:45%"></span><span style="height:38%"></span><span style="height:61%"></span><span style="height:55%"></span><span style="height:78%"></span><span style="height:70%"></span><span style="height:91%"></span></div>
+          </article>
+          <article class="metric-card accent-coral">
+            <div class="metric-label"><span class="metric-icon">⇄</span> EXCHANGE TRANSFERS <span class="info-dot" title="Transfers to and from labelled exchange ports; separate from DEX trades">i</span></div>
+            <strong>$1.17M</strong><span class="metric-sub muted">separate flow lane</span>
+            <div class="sparkline coral-spark"><span style="height:55%"></span><span style="height:48%"></span><span style="height:63%"></span><span style="height:34%"></span><span style="height:43%"></span><span style="height:39%"></span><span style="height:58%"></span><span style="height:47%"></span><span style="height:72%"></span><span style="height:65%"></span></div>
+          </article>
+          <article class="metric-card accent-amber">
+            <div class="metric-label"><span class="metric-icon">◌</span> TRACKED WALLETS <span class="info-dot" title="Visible nodes in the selected replay window">i</span></div>
+            <strong>84</strong><span class="metric-sub muted">64 visible in scene</span>
+            <div class="wallet-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+          <article class="metric-card accent-violet">
+            <div class="metric-label"><span class="metric-icon">⌁</span> BEHAVIOR GROUPS <span class="info-dot" title="Inferred groups that pass the evidence-family review">i</span></div>
+            <strong>03</strong><span class="metric-sub violet-text">01 needs review</span>
+            <div class="cluster-bars" aria-hidden="true"><span style="height:78%"></span><span style="height:49%"></span><span style="height:31%"></span><b>GROUP STRENGTH</b></div>
+          </article>
+        </section>
+
+        <nav class="view-tabs" aria-label="Primary views">
+          <button class="view-tab active" data-view="ocean-view"><span class="tab-icon">◉</span> Ocean overview</button>
+          <button class="view-tab" data-view="atlas-view"><span class="tab-icon">⌁</span> Flow atlas</button>
+          <button class="view-tab" data-view="coverage-view"><span class="tab-icon">◇</span> Data coverage <span class="tab-count">4/6</span></button>
+        </nav>
+
+        <div class="global-investigation-status" id="globalInvestigationStatus" role="status" aria-live="polite" hidden>
+          <span class="investigation-pulse" aria-hidden="true"></span>
+          <div class="global-investigation-copy"><strong id="globalInvestigationTitle">Analyzing selected token</strong><span id="globalInvestigationText">Comparing the selected evidence across all views.</span></div>
+          <span class="global-investigation-step" id="globalInvestigationStep">ALL VIEWS · LIVE</span>
+        </div>
+
+        <section class="view-section active" id="ocean-view">
+          <div class="workspace-grid">
+            <aside class="case-rail" aria-label="Investigation queue">
+              <div class="rail-heading"><div><span class="section-kicker">LIVE QUEUE</span><h2>Investigations <span>03</span></h2></div><button class="add-case" title="New investigation" aria-label="New investigation">+</button></div>
+              <div class="queue-filters"><button class="queue-filter active" data-filter="all">All <span>3</span></button><button class="queue-filter" data-filter="rising">Rising <span>2</span></button><button class="queue-filter" data-filter="saved">Saved <span>1</span></button></div>
+              <div class="case-list" id="caseList"></div>
+              <div class="rail-footer"><span class="tiny-lock">⌁</span><span>Queue is bounded to <b>3 active cases</b><br />to keep evidence review focused.</span></div>
+            </aside>
+
+            <div class="ocean-stage-panel">
+              <div class="ocean-toolbar"><div><span class="section-kicker">EVIDENCE MAP · REPLAY</span><h2>The living ocean</h2></div><div class="map-tools"><button class="map-tool active" data-map-mode="balance">◌ <span>Balance</span></button><button class="map-tool" data-map-mode="activity">↗ <span>Activity</span></button><button class="map-tool" id="resetMap" aria-label="Reset map">⟳</button></div></div>
+              <div class="ocean-frame">
+                <canvas id="oceanCanvas" aria-label="Interactive saved wallet evidence map. Select a fish or case to inspect evidence."></canvas>
+                <div class="map-annotation annotation-cluster"><span class="annotation-pin"></span><span>candidate school</span></div>
+                <div class="map-annotation annotation-port"><span class="port-pin">▣</span><span>exchange port</span></div>
+                <div class="map-corner-label top-left">NORTH CURRENT<br /><b>ETHEREUM · AURA</b></div>
+                <div class="map-corner-label bottom-right">SCENE 01 / 03<br /><b>GRAPH LAYOUT · NOT GEOGRAPHIC</b></div>
+                <div class="map-hover-card" id="mapHoverCard"></div>
+              </div>
+              <div class="map-legend"><div><span class="legend-item"><i class="legend-fish cyan"></i> wallet</span><span class="legend-item"><i class="legend-fish amber"></i> selected</span><span class="legend-item"><i class="legend-line"></i> observed link</span><span class="legend-item"><i class="legend-outline"></i> inferred cluster</span></div><span class="legend-note">Size = token balance · Lines = typed evidence only</span></div>
+              <div class="timeline-bar"><button class="play-button" id="playButton" aria-label="Play replay"><span id="playIcon">▶</span></button><div class="timeline-main"><div class="timeline-labels"><span>SEP 13</span><span id="currentTimelineDate">SEP 17 · 14:00</span><span>SEP 20</span></div><input id="timeline" type="range" min="0" max="100" value="63" aria-label="Replay timeline" /><div class="timeline-ticks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="coverage-mini"><span class="coverage-ring">92</span><span><small>COVERAGE</small><b>Good</b></span></div></div>
+            </div>
+
+            <aside class="evidence-panel" aria-label="Evidence drawer">
+              <div class="evidence-header"><div><span class="section-kicker">SELECTED CASE</span><h2 id="evidenceTitle">Fragmented accumulation</h2></div><button class="close-drawer" aria-label="Collapse evidence drawer">×</button></div>
+              <div class="case-status-row"><span class="status-pill moderate" id="evidenceStatus">MODERATE EVIDENCE</span><span class="case-id" id="caseId">CASE-014 · v2</span></div>
+              <p class="finding" id="findingText">A school of smaller wallets is accumulating AURA in repeated rounds. The pattern is worth investigating, but common execution or shared services remain possible.</p>
+
+              <div class="confidence-block"><div class="confidence-heading"><span>BEHAVIORAL CONFIDENCE</span><strong id="confidenceValue">78%</strong></div><div class="confidence-track"><span id="confidenceFill" style="width:78%"></span></div><div class="confidence-foot"><span>Heuristic · uncalibrated</span><span id="confidenceDescriptor">3 independent families</span></div><div class="confidence-caveat">This is confidence in coordinated behavior, <b>not</b> a probability of common ownership.</div></div>
+
+              <div class="evidence-summary"><div><small>COMBINED EXPOSURE</small><strong id="exposureValue">$486.2K</strong><span id="exposureSub">12 wallets · 0.8% of supply</span></div><div><small>EXTERNAL NET FLOW</small><strong class="positive" id="flowValue">+$312.8K</strong><span>internal transfers removed</span></div></div>
+
+              <div class="drawer-section"><div class="drawer-section-heading"><h3>Why connected?</h3><span class="evidence-count" id="evidenceCount">3 families</span></div><div class="evidence-list" id="evidenceList"></div></div>
+              <div class="drawer-section counter-section"><div class="drawer-section-heading"><h3>Counterevidence</h3><span class="counter-mark">!</span></div><div class="counter-card" id="counterEvidence">Shared exchange withdrawal timing could explain part of the synchronization. This is why the cluster remains an inferred hypothesis.</div></div>
+              <div class="drawer-section wallet-section"><div class="drawer-section-heading"><h3>Wallet-level evidence</h3><button class="link-button" id="showAllWallets">View all wallets ↗</button></div><div class="member-grid" id="memberGrid"></div><div class="excluded-note" id="excludedNote" hidden></div></div>
+              <div class="drawer-actions"><button class="investigate-button" id="investigateButton"><span class="sonar-mini">◉</span> Investigate school</button><button class="secondary-button" id="saveButton">♡ <span>Save case</span></button><button class="secondary-button" id="excludeButton">⊘ <span>Test without wallet</span></button></div>
+              <div class="provenance"><span class="provenance-icon">⌁</span><span><b>Data provenance</b><br />Live Nansen response · shown after an explicit request</span><button id="provenanceButton" aria-label="Open provenance details">↗</button></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view-section atlas-section" id="atlas-view">
+          <div class="atlas-heading"><div><span class="section-kicker">FLOW ATLAS · TOKEN QUANTITIES</span><h2>Where the current travels</h2><p>Observed routes are kept separate from inferred groupings. USD valuations are not added to token quantities.</p></div><span class="atlas-badge">AURA · 7D WINDOW</span></div>
+          <div class="atlas-card"><div class="atlas-column labels"><span>WALLET SCHOOLS</span><b>School 01</b><b>School 02</b><b>Known whale</b><b>Fresh wallets</b></div><div class="atlas-flow"><svg viewBox="0 0 760 280" role="img" aria-label="Synthetic flow diagram from wallet schools to protocols and exchanges"><defs><linearGradient id="flowCyan" x1="0" x2="1"><stop stop-color="#43e0d2" stop-opacity=".1" /><stop offset=".55" stop-color="#43e0d2" stop-opacity=".7" /><stop offset="1" stop-color="#43e0d2" stop-opacity=".15" /></linearGradient><linearGradient id="flowAmber" x1="0" x2="1"><stop stop-color="#f5b95b" stop-opacity=".1" /><stop offset=".55" stop-color="#f5b95b" stop-opacity=".7" /><stop offset="1" stop-color="#f5b95b" stop-opacity=".15" /></linearGradient></defs><path class="flow-path cyan-path" d="M20 47 C200 47 210 92 390 90 S550 47 735 47" /><path class="flow-path amber-path" d="M20 105 C210 105 220 156 390 148 S550 106 735 110" /><path class="flow-path violet-path" d="M20 163 C180 163 250 218 390 198 S550 155 735 168" /><path class="flow-path coral-path" d="M20 221 C190 221 235 178 390 207 S560 222 735 222" /><circle cx="390" cy="90" r="8" class="flow-node cyan-node" /><circle cx="390" cy="148" r="8" class="flow-node amber-node" /><circle cx="390" cy="198" r="8" class="flow-node violet-node" /><circle cx="390" cy="207" r="8" class="flow-node coral-node" /><rect x="715" y="26" width="38" height="38" rx="12" class="destination-box cyan-box" /><rect x="715" y="90" width="38" height="38" rx="12" class="destination-box violet-box" /><rect x="715" y="148" width="38" height="38" rx="12" class="destination-box amber-box" /><rect x="715" y="202" width="38" height="38" rx="12" class="destination-box coral-box" /></svg><div class="atlas-destinations"><span>DEX / Router</span><span>Cold storage</span><span>Exchange port</span><span>Unknown</span></div></div><div class="atlas-column values"><span>OBSERVED FLOW</span><b>+$312.8K</b><b>+$84.2K</b><b>−$102.5K</b><b>+$41.6K</b></div></div>
+          <div class="atlas-footnote"><span class="legend-line cyan-line"></span> Executed or transferred event <span class="legend-outline violet-outline"></span> Inferred destination grouping <span class="footnote-warning">! Cross-chain matching is unavailable in this saved snapshot</span></div>
+        </section>
+
+        <section class="view-section coverage-section" id="coverage-view">
+          <div class="coverage-heading"><div><span class="section-kicker">DETECTOR LANES</span><h2>Evidence coverage, at a glance</h2><p>The interface reports what is available instead of filling gaps with plausible prose.</p></div><div class="coverage-score"><strong>4</strong><span>/ 6 lanes<br />mapped</span></div></div>
+          <div class="coverage-grid"><article class="coverage-card available"><div class="coverage-card-top"><span class="coverage-symbol">◈</span><span class="lane-state">SAVED DATA</span></div><h3>Token discovery</h3><p>Two Nansen token snapshots are saved locally for repeatable testing without another provider call.</p><code>/api/v1/token-screener</code></article><article class="coverage-card available"><div class="coverage-card-top"><span class="coverage-symbol">↗</span><span class="lane-state">SAVED DATA</span></div><h3>Flow intelligence</h3><p>Smart-money, whale, fresh-wallet, and exchange lanes are kept separate in the saved snapshots.</p><code>/api/v1/tgm/flow-intelligence</code></article><article class="coverage-card available"><div class="coverage-card-top"><span class="coverage-symbol">⌁</span><span class="lane-state">INFERRED</span></div><h3>Wallet relationships</h3><p>Only direct transfer edges form a group; visual proximity never creates an ownership claim.</p><code>/api/v1/tgm/transfers</code></article><article class="coverage-card available"><div class="coverage-card-top"><span class="coverage-symbol">◷</span><span class="lane-state">SAVED DATA</span></div><h3>Historical context</h3><p>Saved timestamps and hourly flow buckets remain available for replay and explanation.</p><code>recorded Nansen response</code></article><article class="coverage-card unavailable" id="liveProviderCard"><div class="coverage-card-top"><span class="coverage-symbol">◎</span><span class="lane-state" id="liveLaneState">NOT CHECKED</span></div><h3>Live provider data</h3><p id="liveLaneDescription">No live request has been made. Use “Check live data” for one low-cost token-screener request.</p><code id="liveLaneCode">server adapter ready</code></article><article class="coverage-card unavailable"><div class="coverage-card-top"><span class="coverage-symbol">△</span><span class="lane-state">NOT LOADED</span></div><h3>Perpetuals &amp; DCA</h3><p>Advanced behavior lanes are not requested during discovery because they would spend additional provider calls.</p><code>next token investigation</code></article></div>
+        </section>
+      </main>
+
+      <footer class="footer"><div><span class="footer-mark">◌</span> Smart Detective <span class="footer-divider">/</span> evidence before certainty</div><div class="footer-links"><button id="limitationsButton">Limitations</button><span>v0.1</span></div></footer>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <dialog class="modal" id="infoModal"><button class="modal-close" id="modalClose" aria-label="Close">×</button><span class="section-kicker">ABOUT SMART DETECTIVE</span><h2>Evidence before certainty.</h2><p>Smart Detective compares Nansen flow cohorts and wallet evidence. It distinguishes observations returned by the provider from inferred behavior groups, shows counterevidence, and leaves unavailable data clearly marked.</p><div class="modal-rule"></div><div class="modal-grid"><div><small>OBSERVED</small><b>Nansen responses</b></div><div><small>INFERRED</small><b>Behavior groups</b></div><div><small>UNAVAILABLE</small><b>Missing endpoints</b></div></div></dialog>
+    <script src="./app.js"></script>
+  </body>
+</html>

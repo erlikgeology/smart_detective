@@ -1,0 +1,22 @@
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Local provider responses and caches
+fixtures/
+
+# Browser state, test output, and generated files
+.playwright-cli/
+.playwright-mcp/
+node_modules/
+output/
+test-results/
+coverage/
+*.log
+
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

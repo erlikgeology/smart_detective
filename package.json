@@ -1,0 +1,16 @@
+{
+  "name": "smart-detective",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Evidence-first multi-chain smart-money investigation app powered by Nansen",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "check": "node --check app.js && node --check server.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
